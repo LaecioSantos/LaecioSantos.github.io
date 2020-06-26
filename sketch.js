@@ -13,6 +13,8 @@ function preload(){
 
   somDoJogo = loadSound('sons/trilha_jogo.mp3'); 
 
+  somCrash = loadSound('sons/crash.mp3')
+
   fita = loadJSON('fita/fita.json'); 
 
 }
@@ -21,7 +23,7 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40); //padrao 
-  somDoJogo.loop(); 
+  // somDoJogo.loop(); 
   
   jogo = new Jogo(); 
   telaInicial = new TelaInicial(); 

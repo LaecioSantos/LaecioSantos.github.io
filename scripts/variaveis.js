@@ -1,3 +1,5 @@
+let versao = "V. 0.1.0"
+
 let imagemCenario; 
 let imagemPersonagem; 
 let imagemInimigo; 
@@ -22,6 +24,8 @@ let inimigoGrande;
 let inimigoVoador; 
 
 let somDoJogo; 
+
+let somCrash; 
 
 let pontuacao; 
 
