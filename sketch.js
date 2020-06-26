@@ -21,7 +21,7 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40); //padrao 
-  // somDoJogo.loop(); 
+  somDoJogo.loop(); 
   
   jogo = new Jogo(); 
   telaInicial = new TelaInicial(); 
