@@ -75,7 +75,8 @@ class Jogo {
       if (this.indice > this.mapa.length - 1) {
         this.indice = 0;
         
-        multiplicadorVelocidade+= 0.5; 
+        multiplicadorVelocidade = multiplicadorVelocidade + 0.5; 
+        console.log("Aumenotu velocidade: " + multiplicadorVelocidade)
         this.ativarVisualizacaoPainelVelocidade(); 
 
       }

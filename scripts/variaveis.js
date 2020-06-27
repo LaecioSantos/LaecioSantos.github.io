@@ -1,4 +1,4 @@
-let versao = "V. 0.4.0"
+let versao = "V. 0.5.0"
 
 let imagemCenario; 
 let imagemPersonagem; 
