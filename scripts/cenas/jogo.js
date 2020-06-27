@@ -30,41 +30,40 @@ class Jogo {
     inimigos.push(inimigo)
     inimigos.push(inimigoGrande)
     inimigos.push(inimigoVoador)
-
   }
 
   keyPressed(key) {
     if (key === 'ArrowUp') {
       personagem.pula();
-      // somDoPulo.play();    -> Movido para o personagem 
     }
   }
 
   draw() {
-    // background(imagemCenario);
-    //posição na tela; tamanho total; numero da figura dentro do array de figuras, proporção da imagem original; 
-    // image(imagemCenario, -50, 0, width, height);
-    // image(imagemCenario, width -50, 0, width, height);
+    if(inicioJogo){
+      this.ativarVisualizacaoPainelVelocidade(); 
+      inicioJogo = 0; 
+    }
+
     cenario.exibe();
     cenario.move();
 
-    vida.draw()
+    vida.draw(); 
     
     pontuacao.exibe();
     pontuacao.adicionarPonto();
-
-    // inimigo.exibe(); 
-    // inimigoGrande.exibe();
 
     personagem.exibe();
     personagem.aplicaGravidade();
 
     const linhaAtual = this.mapa[this.indice]; 
     const inimigo = inimigos[linhaAtual.inimigo];
+    inimigo.velocidade = linhaAtual.velocidade * multiplicadorVelocidade;
 
-    const inimigoVisivel = inimigo.x < -inimigo.largura; //Verificar se já saiu da tela 
-    
-    inimigo.velocidade = linhaAtual.velocidade;
+    const inimigoVisivel = inimigo.x < -inimigo.largura;  
+
+    if(mostrarPainelVelocidade){
+      this.mostrarVelocidade(); 
+    }
 
     inimigo.exibe();
     inimigo.move();
@@ -75,6 +74,10 @@ class Jogo {
 
       if (this.indice > this.mapa.length - 1) {
         this.indice = 0;
+        
+        multiplicadorVelocidade+= 0.5; 
+        this.ativarVisualizacaoPainelVelocidade(); 
+
       }
     }
 
@@ -83,12 +86,25 @@ class Jogo {
       vida.perdeVida(); 
       personagem.tornarInvencivel(); 
       if (vida.vidas == 0) {
+        terminoJogo = 1; 
         image(imagemGameOver, width / 2 - 200, height / 3); 
         somDoJogo.stop();
         noLoop(); 
       }
-      // noLoop()
     }
 
+  }
+
+  mostrarVelocidade(){
+    textAlign(CENTER)
+    textSize(50);
+    text('Velocidade ' + multiplicadorVelocidade , width / 2, height / 3);
+  }
+
+  ativarVisualizacaoPainelVelocidade(){
+    mostrarPainelVelocidade = 1; 
+    setTimeout(() => {
+      mostrarPainelVelocidade = 0
+    }, 2000)
   }
 }

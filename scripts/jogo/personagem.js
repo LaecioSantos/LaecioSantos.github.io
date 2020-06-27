@@ -18,8 +18,6 @@ class Personagem extends Animacao {
       this.alturaDoPulo = -50; 
       this.gravidade = 5
       
-      this.somDoPulo = loadSound('sons/somPulo.mp3'); 
-      
       this.pulo1 = false; 
       this.pulo2 = false; 
       
@@ -28,7 +26,7 @@ class Personagem extends Animacao {
   
   pula(){
     if(this.y == this.yInicial || this.pulo2 == false){
-      this.somDoPulo.play(); 
+      somDoPulo.play(); 
       this.velocidadeDoPulo = this.alturaDoPulo;
       if(this.pulo1 == true) {
         this.pulo2 = true; 
@@ -64,16 +62,6 @@ class Personagem extends Animacao {
     if(this.invencivel) {
       return false
     }
-    
-    //Testando figuras; 
-    // rect(this.x, 
-    //    this.y, 
-    //    this.largura, 
-    //    this.altura); 
-    // rect(inimigo.x, 
-    //    inimigo.y, 
-    //    inimigo.largura,
-    //    inimigo.altura); 
     
     const precisao = .7; 
     

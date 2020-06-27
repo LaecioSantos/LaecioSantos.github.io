@@ -1,4 +1,4 @@
-let versao = "V. 0.2.0"
+let versao = "V. 0.4.0"
 
 let imagemCenario; 
 let imagemPersonagem; 
@@ -24,10 +24,14 @@ let inimigoGrande;
 let inimigoVoador; 
 
 let somDoJogo; 
-
 let somCrash; 
+let somDoPulo; 
 
 let pontuacao; 
+let multiplicadorVelocidade = 1; 
+let mostrarPainelVelocidade = 0; 
+let inicioJogo = 1;
+let terminoJogo = 0;  
 
 let vida; 
 

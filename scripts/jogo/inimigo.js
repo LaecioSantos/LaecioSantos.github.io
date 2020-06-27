@@ -21,8 +21,9 @@ class Inimigo extends Animacao{
     }
   }
   
+  /* Inimigo aparece no final da tela */ 
   aparece() {
-    this.x = width
+    this.x = width; 
   }
 
 }

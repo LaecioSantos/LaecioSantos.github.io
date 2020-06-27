@@ -1,5 +1,4 @@
 function preload(){
-
   imagemCenario = loadImage('imagens/cenario/floresta.png');
   imagemPersonagem = loadImage('imagens/personagem/correndo.png');
   imagemInimigo = loadImage('imagens/inimigos/gotinha.png'); 
@@ -12,12 +11,12 @@ function preload(){
   fonteTelaInicial = loadFont('imagens/assets/fonteTelaInicial.otf');
 
   somDoJogo = loadSound('sons/trilha_jogo.mp3'); 
-
-  somCrash = loadSound('sons/crash_2.wav')
+  somCrash = loadSound('sons/crash_2.wav'); 
+  somDoPulo = loadSound('sons/somPulo.mp3');
 
   fita = loadJSON('fita/fita.json'); 
-
 }
+
 
 //Executa uma vez antes do jogo começar 
 function setup() {
@@ -33,7 +32,7 @@ function setup() {
     telaInicial
   }
   
-  botaoGerenciador = new BotaoGerenciador('Inicar', width/2, height/2); 
+  botaoGerenciador = new BotaoGerenciador('Iniciar', width/2, height/2); 
 }
 
 function keyPressed(){
