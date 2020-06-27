@@ -13,7 +13,7 @@ function preload(){
 
   somDoJogo = loadSound('sons/trilha_jogo.mp3'); 
 
-  somCrash = loadSound('sons/crash.mp3')
+  somCrash = loadSound('sons/crash_2.wav')
 
   fita = loadJSON('fita/fita.json'); 
 
