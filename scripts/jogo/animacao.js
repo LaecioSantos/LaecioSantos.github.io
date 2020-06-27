@@ -15,7 +15,7 @@ class Animacao{
     this.larguraSprite = larguraSprite
     this.alturaSprite = alturaSprite
     
-    this.frameAtual = 0  sw
+    this.frameAtual = 0; 
   }
   
   exibe(){
